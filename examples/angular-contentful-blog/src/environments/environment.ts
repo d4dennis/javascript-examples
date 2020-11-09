@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   contentful: {
-    space: 'vcdjjbl2zaex',
-    accessToken: 'xG-Ei5PrA5Dz-dr7kaKwSUMHe0UGXUzP690e4QGtSbE',
+    space: 'eb0a2ood6a2p',
+    accessToken: 'dql2D_mf_k7lmWj76QwQ7CAOFcl_23wrik0t9O5Oy1I',
   },
   hostUrl: 'http://localhost:4200',
 };

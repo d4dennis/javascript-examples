@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <h1 className="section-headline">Recent articles</h1>
+  <article className="article-list" *ngFor="let blogPost of blogPosts">
+    <h3>
+      <a [routerLink]="blogPost.fields.slug">{{ blogPost.fields.title }}</a>
+    </h3>
+    <p>
+      {{ blogPost.fields.description }}
+    </p>
+  </article>
+</div>

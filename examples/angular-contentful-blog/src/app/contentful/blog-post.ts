@@ -10,7 +10,8 @@ export interface BlogPost {
   title: string;
   slug: string;
   content: string;
-  excerpt: string;
-  featuredImage: Asset;
-  keywords: Array<string>;
+  description: string;
+  heroImage: Asset;
+  tags: Array<string>;
+  publishDate: string;
 }

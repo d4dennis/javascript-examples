@@ -1,0 +1,15 @@
+<ng-container *ngIf="blogPost; else loading">
+    <div class="wrapper">
+        <div class="hero">
+            <img class="heroImage"
+                [src]="blogPost.fields.heroImage.fields.file.url"
+                [alt]="blogPost.fields.heroImage.fields.title"
+            />
+        </div>
+        <h1 class="section-headline">{{ blogPost.fields.title }}</h1>
+        <p style="display: block;">Published at: {{blogPost.fields.publishDate}}</p>
+        <ngx-contentful-rich-text [document]="blogPost.fields.content">            
+        </ngx-contentful-rich-text>
+    </div>
+</ng-container>
+<ng-template #loading>Loading...</ng-template>

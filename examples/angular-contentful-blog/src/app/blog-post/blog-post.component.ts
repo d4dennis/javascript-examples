@@ -8,18 +8,7 @@ import { ContentfulApiService } from '../contentful/contentful-api.service';
 
 @Component({
   selector: 'app-blog-post',
-  template: `
-    <ng-container *ngIf="blogPost; else loading">
-      <h1>{{ blogPost.fields.title }}</h1>
-      <img
-        [src]="blogPost.fields.featuredImage.fields.file.url"
-        [alt]="blogPost.fields.featuredImage.fields.title"
-      />
-      <ngx-contentful-rich-text [document]="blogPost.fields.content">
-      </ngx-contentful-rich-text>
-    </ng-container>
-    <ng-template #loading>Loading...</ng-template>
-  `,
+  templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.scss'],
 })
 export class BlogPostComponent implements OnInit {
@@ -45,15 +34,15 @@ export class BlogPostComponent implements OnInit {
       this.meta.addTags([
         {
           name: 'description',
-          content: blogPost.fields.excerpt,
+          content: blogPost.fields.description,
         },
         {
           name: 'keywords',
-          content: blogPost.fields.keywords.join(','),
+          content: blogPost.fields.tags.join(','),
         },
         {
           name: 'og:image',
-          content: blogPost.fields.featuredImage.fields.file.url,
+          content: blogPost.fields.heroImage.fields.file.url,
         },
       ]);
     });
