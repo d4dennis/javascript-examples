@@ -2,14 +2,20 @@
     <div class="wrapper">
         <div class="hero">
             <img class="heroImage"
-                [src]="blogPost.fields.heroImage.fields.file.url"
-                [alt]="blogPost.fields.heroImage.fields.title"
+                [src]="blogPost.fields?.heroImage?.fields?.file.url"
+                [alt]="blogPost.fields?.heroImage?.fields?.title"
             />
         </div>
-        <h1 class="section-headline">{{ blogPost.fields.title }}</h1>
-        <p style="display: block;">Published at: {{blogPost.fields.publishDate}}</p>
-        <ngx-contentful-rich-text [document]="blogPost.fields.content">            
-        </ngx-contentful-rich-text>
+        <h1 class="section-headline">{{ blogPost.fields?.title }}</h1>
+        <p>
+            <small>
+                Posted by <i>{{ blogPost.fields?.author?.fields?.name }}</i> at <i>{{ blogPost.fields?.publishDate | date }}</i>
+            </small>
+        </p>
+        <div class="section-content">
+            <ngx-contentful-rich-text [document]="blogPost.fields?.content">            
+            </ngx-contentful-rich-text>
+        </div>
     </div>
 </ng-container>
 <ng-template #loading>Loading...</ng-template>
