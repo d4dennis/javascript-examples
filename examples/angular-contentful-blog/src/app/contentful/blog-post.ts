@@ -1,4 +1,4 @@
-import { Asset } from 'contentful';
+import { Asset, Entry } from 'contentful';
 
 /**
  * This model represents our Blog Post content type in Contentful and
@@ -9,9 +9,11 @@ import { Asset } from 'contentful';
 export interface BlogPost {
   title: string;
   slug: string;
-  content: string;
-  description: string;
   heroImage: Asset;
-  tags: Array<string>;
+  description: string;
+  body: string;
+  content: string;
+  author: Entry<any>;
   publishDate: string;
+  tags: Array<string>;
 }

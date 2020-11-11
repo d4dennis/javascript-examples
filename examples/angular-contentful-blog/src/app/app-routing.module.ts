@@ -19,6 +19,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabled',
+      useHash: true,
     }),
   ],
   exports: [RouterModule],

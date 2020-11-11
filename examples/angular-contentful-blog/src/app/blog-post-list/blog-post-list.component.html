@@ -2,10 +2,14 @@
   <h1 className="section-headline">Recent articles</h1>
   <article className="article-list" *ngFor="let blogPost of blogPosts">
     <h3>
-      <a [routerLink]="blogPost.fields.slug">{{ blogPost.fields.title }}</a>
+      <a [routerLink]="blogPost.fields?.slug">{{ blogPost.fields?.title }}</a>
     </h3>
     <p>
-      {{ blogPost.fields.description }}
+      {{ blogPost.fields?.description }}
+      <br/>
+      <small>
+        Posted by <i>{{ blogPost.fields?.author?.fields?.name }}</i> at <i>{{ blogPost.fields?.publishDate | date }}</i>
+      </small>
     </p>
   </article>
 </div>
